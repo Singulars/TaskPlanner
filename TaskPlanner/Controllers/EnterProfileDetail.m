@@ -199,7 +199,7 @@
     [activityLogin startAnimating];
     userIntrectionEnable(0);
     NSMutableDictionary *diccUser=[[NSMutableDictionary alloc] init];
-    [diccUser setObject:strMobileNo forKey:knumber];
+    [diccUser setObject:strMobileNo forKey:kmobile];
     [diccUser setObject:strCC forKey:kcountryCode];
     [diccUser setObject:txtFirstName.text forKey:kfirstName];
     [diccUser setObject:txtLastName.text forKey:klastName];

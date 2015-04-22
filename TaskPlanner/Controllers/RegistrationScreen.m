@@ -209,13 +209,21 @@
                      }
                      else
                      {
-                         LoginUserDetails *objLogin=[LoginUserDetails SaveLoginUserDeatilsWithData:[result objectForKey:kuserDetails]];
-                         [ShareObj setObjLoginUser:objLogin];
-                         
-                         EnterProfileDetail *objProScr=[self.storyboard instantiateViewControllerWithIdentifier:@"EnterProfileDetail"];
-                         [objProScr setStrMobileNo:txtNumber.text];
-                         [objProScr setStrCC:lblCountryCode.text];
-                         [self.navigationController pushViewController:objProScr animated:YES];
+                         if ([[result objectForKey:kisRegistered] integerValue]==0) {
+                             EnterProfileDetail *objProScr=[self.storyboard instantiateViewControllerWithIdentifier:@"EnterProfileDetail"];
+                             [objProScr setStrMobileNo:txtNumber.text];
+                             [objProScr setStrCC:lblCountryCode.text];
+                             [self.navigationController pushViewController:objProScr animated:YES];
+                         }
+                         else {
+                             LoginUserDetails *objLogin=[LoginUserDetails SaveLoginUserDeatilsWithData:[result objectForKey:kuserDetails]];
+                             [ShareObj setObjLoginUser:objLogin];
+                             
+                             EnterProfileDetail *objProScr=[self.storyboard instantiateViewControllerWithIdentifier:@"EnterProfileDetail"];
+                             [objProScr setStrMobileNo:txtNumber.text];
+                             [objProScr setStrCC:lblCountryCode.text];
+                             [self.navigationController pushViewController:objProScr animated:YES];
+                         }
                      }
                  }
                  else
