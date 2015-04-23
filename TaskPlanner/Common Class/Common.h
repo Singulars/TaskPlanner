@@ -8,14 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
-
+#import <AddressBook/AddressBook.h>
 
 
 @interface Common : NSObject
 {
 
 }
-
++ (NSMutableArray *)FetchContactsArray:(ABAddressBookRef)addressBook;
++(NSMutableArray *)getAllNewContactsFromContactList;
 +(NSString *)saveImage:(NSData *)ImageData :(NSString *)strPath Indirectory:(NSString *)directoryName;
 + (NSString *)getForProfilePicAvailibility:(NSString *)strImageName;
 +(NSString *)getImage:(NSString *)strId fromDirectory:(NSString *)directory;

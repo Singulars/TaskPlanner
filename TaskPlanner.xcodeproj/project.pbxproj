@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D0AEFB21AE91C6200E6BDFA /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D0AEFB11AE91C6200E6BDFA /* AddressBook.framework */; };
 		9DE1C2281AE7B8780040D324 /* Reminders.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE1C2271AE7B8780040D324 /* Reminders.m */; };
 		9DE1C22B1AE7BE550040D324 /* FriendPickerScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE1C22A1AE7BE550040D324 /* FriendPickerScreen.m */; };
 		9DE1C22E1AE7C1640040D324 /* Friends.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE1C22D1AE7C1640040D324 /* Friends.m */; };
@@ -76,6 +77,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9D0AEFB11AE91C6200E6BDFA /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		9DE1C2261AE7B8780040D324 /* Reminders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reminders.h; path = "../Model Interface/Reminders.h"; sourceTree = "<group>"; };
 		9DE1C2271AE7B8780040D324 /* Reminders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reminders.m; path = "../Model Interface/Reminders.m"; sourceTree = "<group>"; };
 		9DE1C2291AE7BE550040D324 /* FriendPickerScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendPickerScreen.h; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D0AEFB21AE91C6200E6BDFA /* AddressBook.framework in Frameworks */,
 				C0DD70071AE3CE3E0096F217 /* MobileCoreServices.framework in Frameworks */,
 				C01735EA1AE31CCD00AA9AE2 /* CoreData.framework in Frameworks */,
 				C01735AB1AE2F81100AA9AE2 /* AssetsLibrary.framework in Frameworks */,
@@ -354,6 +357,7 @@
 		C07573331AE2F3380017E0F9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9D0AEFB11AE91C6200E6BDFA /* AddressBook.framework */,
 				C0DD70061AE3CE3E0096F217 /* MobileCoreServices.framework */,
 				C01735E91AE31CCD00AA9AE2 /* CoreData.framework */,
 				C01735AA1AE2F81100AA9AE2 /* AssetsLibrary.framework */,

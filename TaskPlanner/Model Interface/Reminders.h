@@ -20,4 +20,12 @@
 @property (nonatomic, retain) NSString * allFriendIds;
 @property (nonatomic, retain) NSString * reminderDescription;
 
++ (NSNumber *)generateID;
++(id)SaveReminderDeatilsWithData:(NSDictionary *)dataDict;
++(void)deleteAllReminderDetail;
++(void)deleteReminderDetailByID:(NSInteger)reminderId;
++(id)fetchReminderById:(NSInteger)userId;
++(id)fetchReminderDetails;
++(id)initWithObject :(NSDictionary *)dataDict;
+
 @end
