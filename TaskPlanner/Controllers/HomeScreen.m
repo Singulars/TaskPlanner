@@ -24,7 +24,7 @@
     
     UILabel *NavTitle = [[UILabel alloc] initWithFrame:CGRectZero];
     NavTitle.backgroundColor = [UIColor clearColor];
-    NavTitle.font =ScreenTitleFont;
+    NavTitle.font =ScreenTitleFontWithOutBold;
     NavTitle.textAlignment = NSTextAlignmentCenter;
     NavTitle.textColor = [UIColor whiteColor];
     [NavTitle setText:@"Home"];
@@ -35,9 +35,11 @@
     [leftBarItem setTintColor:kWhiteColor];
     [self.navigationItem setLeftBarButtonItem:leftBarItem];
     
-    UIBarButtonItem *rightBarItem=[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"createIcon"] style:UIBarButtonItemStylePlain target:self action:@selector(btnCreateNewEventTapped:)];
-    [rightBarItem setTintColor:kWhiteColor];
-    [self.navigationItem setRightBarButtonItem:rightBarItem];
+//    UIBarButtonItem *rightBarItem=[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"createIcon"] style:UIBarButtonItemStylePlain target:self action:@selector(btnCreateNewEventTapped:)];
+//    [rightBarItem setTintColor:kWhiteColor];
+//    [self.navigationItem setRightBarButtonItem:rightBarItem];
+    
+
     
     taskView=[[TaskVIew alloc] initWithFrame:CGRectMake(0, 0, scrContainerView.frame.size.width, scrContainerView.frame.size.height)];
     [scrContainerView addSubview:taskView];

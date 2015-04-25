@@ -23,8 +23,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view contentMode="scaleToFill" id="Pzj-y6-Lf2" customClass="ParallaxHeaderView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="JyM-KG-Utt">
-                                                    <rect key="frame" x="10" y="10" width="90" height="90"/>
+                                                    <rect key="frame" x="80" y="10" width="90" height="90"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" image="demoPic.png">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -33,8 +38,8 @@
                                                         <action selector="btnProfileTapped:" destination="iIa-Dl-yZa" eventType="touchUpInside" id="hdB-BG-aBM"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peter Parker" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qhn-jx-X7s">
-                                                    <rect key="frame" x="10" y="108" width="250" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peter Parker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qhn-jx-X7s">
+                                                    <rect key="frame" x="10" y="110" width="230" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -146,6 +151,7 @@
                         <outlet property="lblName" destination="qhn-jx-X7s" id="dBm-Ed-Dfc"/>
                         <outlet property="lblNotifications" destination="HL3-bM-7oC" id="CZq-0U-4EW"/>
                         <outlet property="lblSettings" destination="2CT-GI-FHq" id="XPb-fM-Tpz"/>
+                        <outlet property="parallexHeaderView" destination="Pzj-y6-Lf2" id="tL3-gh-gTC"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rwx-9P-txA" userLabel="First Responder" sceneMemberID="firstResponder"/>
