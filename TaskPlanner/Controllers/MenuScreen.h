@@ -12,6 +12,9 @@
 @interface MenuScreen : UITableViewController
 {
     
+    __weak IBOutlet UILabel *lblBirthdays;
+    __weak IBOutlet UILabel *lblFriends;
+    __weak IBOutlet UILabel *lblGroups;
     __weak IBOutlet ParallaxHeaderView *parallexHeaderView;
     __weak IBOutlet UILabel *lblSettings;
     __weak IBOutlet UILabel *lblNotifications;
@@ -20,6 +23,7 @@
     __weak IBOutlet UILabel *lblHome;
     __weak IBOutlet UILabel *lblName;
     __weak IBOutlet UIButton *btnProfile;
+    NSInteger lastIndex;
 }
 - (IBAction)btnProfileTapped:(id)sender;
 @end

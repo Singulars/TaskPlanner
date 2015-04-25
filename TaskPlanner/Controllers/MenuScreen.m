@@ -9,6 +9,19 @@
 #import "MenuScreen.h"
 #import "ContainerViewController.h"
 #import "CreateNewReminer.h"
+#import "HomeScreen.h"
+#import "FriendPickerScreen.h"
+
+#define ProfileRow 0
+#define HomeRow 1
+#define AddReminder 4
+#define AddEventRow 5
+#define NotificationsRow 7
+#define SettingsRow 8
+#define FriendRow 2
+#define GroupsRow 3
+#define BirthdayRow 6
+
 
 @interface MenuScreen ()
 
@@ -50,6 +63,14 @@
     [lblSettings setTextColor:COLOR_WITH_RGBA(51.0f, 51.0f, 51.0f, 1.0)];
     [lblNotifications setFont:KSetFont(kDefaultFontName, 18)];
     [lblNotifications setTextColor:COLOR_WITH_RGBA(51.0f, 51.0f, 51.0f, 1.0)];
+    [lblFriends setFont:KSetFont(kDefaultFontName, 18)];
+    [lblFriends setTextColor:COLOR_WITH_RGBA(51.0f, 51.0f, 51.0f, 1.0)];
+    [lblGroups setFont:KSetFont(kDefaultFontName, 18)];
+    [lblGroups setTextColor:COLOR_WITH_RGBA(51.0f, 51.0f, 51.0f, 1.0)];
+    [lblBirthdays setFont:KSetFont(kDefaultFontName, 18)];
+    [lblBirthdays setTextColor:COLOR_WITH_RGBA(51.0f, 51.0f, 51.0f, 1.0)];
+    
+    lastIndex=1;
     // Do any additional setup after loading the view.
 }
 
@@ -60,9 +81,68 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ContainerViewController *objContainer = (ContainerViewController *)self.navigationController.parentViewController;
-    CreateNewReminer *objViewcontroller = (CreateNewReminer *)[self.storyboard instantiateViewControllerWithIdentifier:@"CreateNewReminer"];
-    [objContainer loadSelectedViewController:objViewcontroller];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NSLog(@"%li",indexPath.row);
+    if (lastIndex==indexPath.row) {
+        return;
+    }
+    
+    lastIndex=indexPath.row;
+    
+    switch (indexPath.row) {
+        case HomeRow:
+        {
+            
+            ContainerViewController *objContainer = (ContainerViewController *)self.navigationController.parentViewController;
+            HomeScreen *objViewcontroller = (HomeScreen *)[self.storyboard instantiateViewControllerWithIdentifier:@"HomeScreen"];
+            [objContainer loadSelectedViewController:objViewcontroller];
+        }
+            break;
+        case AddReminder:
+        {
+            ContainerViewController *objContainer = (ContainerViewController *)self.navigationController.parentViewController;
+            CreateNewReminer *objViewcontroller = (CreateNewReminer *)[self.storyboard instantiateViewControllerWithIdentifier:@"CreateNewReminer"];
+            [objContainer loadSelectedViewController:objViewcontroller];
+        }
+            break;
+        case AddEventRow:
+        {
+            
+        }
+            break;
+        case NotificationsRow:
+        {
+            
+        }
+            break;
+        case SettingsRow:
+        {
+            
+        }
+            break;
+        case FriendRow:
+        {
+            ContainerViewController *objContainer = (ContainerViewController *)self.navigationController.parentViewController;
+             FriendPickerScreen *objScr=[self.storyboard instantiateViewControllerWithIdentifier:@"FriendPickerScreen"];
+            [objContainer loadSelectedViewController:objScr];
+           
+        }
+            break;
+        case BirthdayRow:
+        {
+            
+        }
+            break;
+        case ProfileRow:
+        {
+            
+        }
+            break;
+            
+        default:
+            break;
+    }
+ 
 }
 
 

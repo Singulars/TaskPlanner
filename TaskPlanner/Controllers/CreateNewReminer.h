@@ -11,6 +11,8 @@
 @interface CreateNewReminer : UITableViewController<UITextFieldDelegate,UITextViewDelegate>
 {
     
+    __weak IBOutlet UILabel *lblRemindOn;
+    IBOutlet UILabel *lblRemindOnDate;
     __weak IBOutlet UILabel *lblTotalFriends;
     __weak IBOutlet UILabel *lblRemindFriends;
     __weak IBOutlet UISwitch *switchRemindMe;
@@ -21,9 +23,12 @@
     __weak IBOutlet UITextView *tvNotes;
     __weak IBOutlet UITextField *txtTitle;
     __weak IBOutlet UILabel *lblTvPlaceholder;
+    __weak IBOutlet UIDatePicker *remindOnDate;
     
-    BOOL isDatePickerIsShown;
+    BOOL isDatePickerIsShown,isRemindOnShown;
 }
 - (IBAction)dateValueChanged:(id)sender;
 - (IBAction)switchValueChanged:(id)sender;
+- (IBAction)remindDateValueChanged:(id)sender;
+
 @end

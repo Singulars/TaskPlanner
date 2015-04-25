@@ -17,6 +17,8 @@
 
 @implementation FriendPickerScreen
 
+@synthesize isFromCreateScreen;
+
 @synthesize arrSelectedIndexPath;
 
 - (void)viewDidLoad {
@@ -35,14 +37,22 @@
     [NavTitle sizeToFit];
     [self.navigationItem setTitleView:NavTitle];
     
-    UIBarButtonItem *leftBarItem=[[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(btnBackTapped:)];
+    UIBarButtonItem *leftBarItem;
+    if (isFromCreateScreen) {
+        leftBarItem=[[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(btnBackTapped:)];
+        UIBarButtonItem *rightBarItem=[[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStylePlain target:self action:@selector(btnDoneTapped:)];
+        [rightBarItem setTintColor:kWhiteColor];
+        [self.navigationItem setRightBarButtonItem:rightBarItem];
+
+    }
+    else
+    {
+        leftBarItem=[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menuIcon"] style:UIBarButtonItemStylePlain target:self action:@selector(btnBackTapped:)];
+    }
     [leftBarItem setTintColor:kWhiteColor];
     [self.navigationItem setLeftBarButtonItem:leftBarItem];
     
-    UIBarButtonItem *rightBarItem=[[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStylePlain target:self action:@selector(btnDoneTapped:)];
-    [rightBarItem setTintColor:kWhiteColor];
-    [self.navigationItem setRightBarButtonItem:rightBarItem];
-}
+  }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -54,9 +64,18 @@
 
 -(IBAction)btnBackTapped:(id)sender
 {
-    [self dismissViewControllerAnimated:YES completion:^{
+    if (isFromCreateScreen) {
+        [self dismissViewControllerAnimated:YES completion:^{
+            
+        }];
+    }
+    else
+    {
+        ContainerViewController *objContainer = (ContainerViewController *)self.parentViewController.parentViewController;
+        [objContainer moveNavigationMenu];
         
-    }];
+    }
+   
 }
 
 -(IBAction)btnDoneTapped:(id)sender

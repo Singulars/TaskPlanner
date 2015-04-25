@@ -184,8 +184,8 @@ static BOOL isMenuOpen = NO;
     if (isMenuOpen) {
         [UIView animateWithDuration:0.5 animations:^{
             //[_objViewController.view setAlpha:0.5f];
-            [_objViewController.view setBackgroundColor:[UIColor colorWithWhite:1 alpha:1]];
-            //[_objViewController.view setUserInteractionEnabled:NO];
+           // [_objViewController.view setBackgroundColor:[UIColor colorWithWhite:1 alpha:1]];
+           // [_objViewController.view setUserInteractionEnabled:YES];
             [_objViewController view].center = CGPointMake(SCREENWIDTH/2, [_objViewController view].center.y);
         }];
         isMenuOpen = NO;
@@ -195,8 +195,8 @@ static BOOL isMenuOpen = NO;
         isMenuOpen = YES;
         [UIView animateWithDuration:0.5 animations:^{
            // [_objViewController.view setAlpha:0.0f];
-            [_objViewController.view setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.3]];
-            //[_objViewController.view setUserInteractionEnabled:YES];
+            //[_objViewController.view setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.3]];
+          //  [_objViewController.view setUserInteractionEnabled:NO];
             [_objViewController view].center = CGPointMake((SCREENWIDTH+(SCREENWIDTH/4)), [_objViewController view].center.y);
         }];
     }

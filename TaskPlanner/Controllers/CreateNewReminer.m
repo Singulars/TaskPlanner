@@ -9,6 +9,8 @@
 #import "CreateNewReminer.h"
 #import "FriendPickerScreen.h"
 
+#define SelectFriendRowNo 5
+
 @interface CreateNewReminer ()
 
 @end
@@ -38,6 +40,9 @@
     [rightBarItem setTintColor:kWhiteColor];
     [self.navigationItem setRightBarButtonItem:rightBarItem];
     
+    [datePicker setMinimumDate:[NSDate date]];
+    [remindOnDate setMinimumDate:[NSDate date]];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,6 +62,9 @@
         case 2:
             return (isDatePickerIsShown)?220.0f:44.0f;
             break;
+        case 3:
+            return (isRemindOnShown)?220.0f:44.0f;
+            break;
             
         default:
             return 44.0f;
@@ -71,10 +79,11 @@
     [self.view endEditing:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     switch (indexPath.section) {
-        case 4:
+        case SelectFriendRowNo:
         {
             FriendPickerScreen *objScr=[self.storyboard instantiateViewControllerWithIdentifier:@"FriendPickerScreen"];
             UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:objScr];
+            objScr.isFromCreateScreen=TRUE;
             [self presentViewController:navController animated:YES completion:nil];
         }
             break;
@@ -85,6 +94,14 @@
             [tableView endUpdates];
         }
             break;
+        case 3:
+        {
+            isRemindOnShown=!isRemindOnShown;
+            [tableView beginUpdates];
+            [tableView endUpdates];
+        }
+            break;
+
         default:
             break;
     }
@@ -143,6 +160,13 @@
 }
 
 - (IBAction)switchValueChanged:(id)sender {
+}
+
+- (IBAction)remindDateValueChanged:(id)sender {
+    NSDateFormatter *df=[[NSDateFormatter alloc] init];
+    [df setDateFormat:kReminderDateormat];
+    NSString *strDate = [df stringFromDate:remindOnDate.date];
+    [lblRemindOnDate setText:strDate];
 }
 
 #pragma mark-

@@ -42,6 +42,8 @@
 		C01735E51AE30CDE00AA9AE2 /* downArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C01735E31AE30CDE00AA9AE2 /* downArrow@2x.png */; };
 		C01735E81AE31AAA00AA9AE2 /* AppNavScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = C01735E71AE31AAA00AA9AE2 /* AppNavScreen.m */; };
 		C01735EA1AE31CCD00AA9AE2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C01735E91AE31CCD00AA9AE2 /* CoreData.framework */; };
+		C02A82441AEC29E4001306A4 /* GroupScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = C02A82431AEC29E4001306A4 /* GroupScreen.m */; };
+		C02A82471AEC2B6C001306A4 /* GroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C02A82461AEC2B6C001306A4 /* GroupCell.m */; };
 		C07573351AE2F3380017E0F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C07573341AE2F3380017E0F9 /* Foundation.framework */; };
 		C07573371AE2F3380017E0F9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C07573361AE2F3380017E0F9 /* CoreGraphics.framework */; };
 		C07573391AE2F3380017E0F9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C07573381AE2F3380017E0F9 /* UIKit.framework */; };
@@ -138,6 +140,10 @@
 		C01735E61AE31AAA00AA9AE2 /* AppNavScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppNavScreen.h; sourceTree = "<group>"; };
 		C01735E71AE31AAA00AA9AE2 /* AppNavScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppNavScreen.m; sourceTree = "<group>"; };
 		C01735E91AE31CCD00AA9AE2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C02A82421AEC29E4001306A4 /* GroupScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupScreen.h; sourceTree = "<group>"; };
+		C02A82431AEC29E4001306A4 /* GroupScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupScreen.m; sourceTree = "<group>"; };
+		C02A82451AEC2B6C001306A4 /* GroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupCell.h; sourceTree = "<group>"; };
+		C02A82461AEC2B6C001306A4 /* GroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupCell.m; sourceTree = "<group>"; };
 		C07573311AE2F3380017E0F9 /* TaskPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C07573341AE2F3380017E0F9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C07573361AE2F3380017E0F9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -287,6 +293,8 @@
 				9DEB4AD71AE67A1200DB91C6 /* CreateNewReminer.m */,
 				9DE1C2291AE7BE550040D324 /* FriendPickerScreen.h */,
 				9DE1C22A1AE7BE550040D324 /* FriendPickerScreen.m */,
+				C02A82421AEC29E4001306A4 /* GroupScreen.h */,
+				C02A82431AEC29E4001306A4 /* GroupScreen.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -310,6 +318,8 @@
 				C0DD70171AE3E55D0096F217 /* EventView.m */,
 				C0DD70191AE3E56E0096F217 /* TaskVIew.h */,
 				C0DD701A1AE3E56E0096F217 /* TaskVIew.m */,
+				C02A82451AEC2B6C001306A4 /* GroupCell.h */,
+				C02A82461AEC2B6C001306A4 /* GroupCell.m */,
 			);
 			path = "Supporting View";
 			sourceTree = "<group>";
@@ -583,8 +593,10 @@
 				C01735BA1AE2F96900AA9AE2 /* NSString+Extra.m in Sources */,
 				C0DD70151AE3E3330096F217 /* HomeScreen.m in Sources */,
 				C01735A41AE2F7AA00AA9AE2 /* APIConnection.m in Sources */,
+				C02A82471AEC2B6C001306A4 /* GroupCell.m in Sources */,
 				9DEFF6B11AEB5C5100F979FF /* ParallaxHeaderView.m in Sources */,
 				9DE1C22B1AE7BE550040D324 /* FriendPickerScreen.m in Sources */,
+				C02A82441AEC29E4001306A4 /* GroupScreen.m in Sources */,
 				9DEA2FD81AE64EE00000A251 /* LoginUserDetails.m in Sources */,
 				C01735C31AE2FBD800AA9AE2 /* ProfileImageDownloader.m in Sources */,
 				C01735BC1AE2F96900AA9AE2 /* UINavigationBar+Extra.m in Sources */,

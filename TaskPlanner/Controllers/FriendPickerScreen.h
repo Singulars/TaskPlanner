@@ -13,4 +13,5 @@
     NSMutableArray *arrFriends;
 }
 @property(nonatomic,strong)  NSMutableArray *arrSelectedIndexPath;
+@property(nonatomic,assign) BOOL isFromCreateScreen;
 @end
