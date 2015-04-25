@@ -19,4 +19,12 @@
 @property (nonatomic, retain) NSString * friendBirthDate;
 @property (nonatomic, retain) NSString * contactNumber;
 
++ (NSNumber *)generateID;
++(id)SaveLFriendDeatilsWithData:(NSDictionary *)dataDict;
++(void)deleteFriendDetailByID:(NSInteger)userId;
++(void)deleteAllFrindsDetail;
++(id)fetchFrienUserById:(NSInteger)userId;
++(id)fetchAllFriendsDetails;
++(id)initWithObject :(NSDictionary *)dataDict;
+
 @end

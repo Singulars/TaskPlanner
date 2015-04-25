@@ -23,14 +23,14 @@
     
     UILabel *NavTitle = [[UILabel alloc] initWithFrame:CGRectZero];
     NavTitle.backgroundColor = [UIColor clearColor];
-    NavTitle.font =ScreenTitleFont;
+    NavTitle.font =ScreenTitleFontWithOutBold;
     NavTitle.textAlignment = NSTextAlignmentCenter;
     NavTitle.textColor = [UIColor whiteColor];
     [NavTitle setText:@"New Reminder"];
     [NavTitle sizeToFit];
     [self.navigationItem setTitleView:NavTitle];
     
-    UIBarButtonItem *leftBarItem=[[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(btnBackTapped:)];
+    UIBarButtonItem *leftBarItem=[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menuIcon"] style:UIBarButtonItemStylePlain target:self action:@selector(btnBackTapped:)];
     [leftBarItem setTintColor:kWhiteColor];
     [self.navigationItem setLeftBarButtonItem:leftBarItem];
     
@@ -96,9 +96,8 @@
 
 -(IBAction)btnBackTapped:(id)sender
 {
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }];
+    ContainerViewController *objContainer = (ContainerViewController *)self.parentViewController.parentViewController;
+    [objContainer moveNavigationMenu];
 }
 
 -(IBAction)btnSaveTapped:(id)sender

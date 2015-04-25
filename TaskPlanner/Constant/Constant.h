@@ -167,7 +167,7 @@ otherButtonTitles:@"OK", nil] show];
 #define ImageHeight 400
 
 #define kDataModel                  @"TaskPlanner"
-
+#define kLASTSYNCDATE @"LastDateOfContactSync"
 
 #define kPrivacyString @"By tapping to continue you are indicating that you have read the Privacy Policy and agree to the Terms of Service."
 #define kInternetNotAvailableAlert @"Please check your internet connection."
@@ -202,6 +202,8 @@ otherButtonTitles:@"OK", nil] show];
 #pragma mark- API Request/Response parameter and Database fields Name
 
 #define kLoginUserDetails       @"LoginUserDetails"
+#define kReminders       @"Reminders"
+#define kFriends            @"Friends"
 
 #define kprofilePic                    @"profilePic"
 #define kloginType   @"loginType"

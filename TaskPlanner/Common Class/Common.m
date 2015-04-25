@@ -7,6 +7,7 @@
 //
 
 #import "Common.h"
+#import "NSData+Extra.h"
 
 @implementation Common
 
@@ -521,5 +522,171 @@
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
     return [emailTest evaluateWithObject:email];
 }
+
+#pragma mark- Fetch Contacts
+
++ (NSMutableDictionary *)getValueFromPlist
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES); //1
+    NSString *documentsDirectory = [paths objectAtIndex:0]; //2
+    NSString *path = [documentsDirectory stringByAppendingPathComponent:@"PInfo.plist"]; //3
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    if (![fileManager fileExistsAtPath:path])
+    {
+        return [[NSMutableDictionary alloc] init];
+    }
+    
+    return [[NSMutableDictionary alloc] initWithContentsOfFile:path];
+}
+
++ (void)setValueToPlist:(NSMutableDictionary *)Info
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES); //1
+    NSString *documentsDirectory = [paths objectAtIndex:0]; //2
+    NSString *path = [documentsDirectory stringByAppendingPathComponent:@"PInfo.plist"]; //3
+    
+    [Info writeToFile: path atomically:YES];
+}
+
++ (NSMutableArray *)FetchContactsArray:(ABAddressBookRef)addressBook
+{
+    NSMutableArray *arrContacts = [[NSMutableArray alloc] init];
+    NSMutableArray *arrUsers = [[NSMutableArray alloc] init];
+    
+    NSMutableArray *thePeople = (__bridge  NSMutableArray*)ABAddressBookCopyArrayOfAllPeople(addressBook);
+    
+    NSCharacterSet *whitespaces = [NSCharacterSet whitespaceCharacterSet];
+    NSPredicate *noEmptyStrings = [NSPredicate predicateWithFormat:@"SELF != ''"];
+    NSCharacterSet *doNotWant = [NSCharacterSet characterSetWithCharactersInString:@"/:.()-*#+"];
+    
+    NSDate *lastSyncDate = [[self getValueFromPlist] objectForKey:kLASTSYNCDATE];
+    
+    [thePeople enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        ABRecordRef person = (__bridge ABRecordRef)obj;
+        ABMultiValueRef phones =(__bridge ABMultiValueRef)((__bridge NSString*)ABRecordCopyValue(person, kABPersonPhoneProperty));
+        
+        NSString *strPhone=@"";
+        NSString *strFirstName=@"";
+        NSString *strLastName=@"";
+        
+        NSString *myNumber=ShareObj.objLoginUser.mobileNmber;
+        
+        if (ABMultiValueGetCount(phones)>0)
+        {
+            for (int k=0; k<ABMultiValueGetCount(phones); k++) {
+                
+                strPhone =(__bridge NSString *)ABMultiValueCopyValueAtIndex(phones,k);
+                strFirstName = (__bridge NSString *)ABRecordCopyValue(person, kABPersonFirstNameProperty);
+                strLastName = (__bridge NSString *)ABRecordCopyValue(person, kABPersonLastNameProperty);
+                
+                NSString *ContactName=[NSString stringWithFormat:@"%@ %@",(strFirstName==nil)?@"":strFirstName,(strLastName==nil)?@"":strLastName];
+                
+                strPhone = [[strPhone componentsSeparatedByCharactersInSet: doNotWant] componentsJoinedByString:@""];
+                NSArray *parts = [strPhone componentsSeparatedByCharactersInSet:whitespaces];
+                NSArray *filteredArray = [parts filteredArrayUsingPredicate:noEmptyStrings];
+                strPhone = [filteredArray componentsJoinedByString:@""];
+                
+                if ([strPhone length]>0) {
+                   // ContactDetails *object=[ContactDetails fetchAndCheckUserByMobileNumber:strPhone];
+                    
+                    NSCharacterSet *whitespaces = [NSCharacterSet whitespaceCharacterSet];
+                    NSString *strname=[ContactName stringByTrimmingCharactersInSet:whitespaces];
+                    
+                    if (![strPhone isEqualToString:myNumber]) {
+                        NSDate *modifyDate = (__bridge NSDate *)ABRecordCopyValue(person, kABPersonModificationDateProperty);
+                        if (modifyDate)
+                        {
+                            if(lastSyncDate != nil)
+                            {
+                                if([lastSyncDate earlierDate:modifyDate])
+                                {
+                                    NSMutableDictionary *diccOFRecoed=[[NSMutableDictionary alloc] init];
+                                    [diccOFRecoed setObject:(strPhone==nil)?@"":strPhone forKey:kcontactNumber];
+                                    
+                                    [diccOFRecoed setObject:([strname length]>0)?ContactName:(strPhone==nil)?@"":strPhone forKey:kfirstName];
+                                    [arrContacts addObject:strPhone];
+                                    [arrUsers addObject:diccOFRecoed];
+                                }
+                            }
+                            else
+                            {
+                                NSMutableDictionary *diccOFRecoed=[[NSMutableDictionary alloc] init];
+                                [diccOFRecoed setObject:(strPhone==nil)?@"":strPhone forKey:kcontactNumber];
+                                
+                                [diccOFRecoed setObject:([strname length]>0)?ContactName:(strPhone==nil)?@"":strPhone forKey:kfirstName];
+                                [arrContacts addObject:strPhone];
+                                [arrUsers addObject:diccOFRecoed];
+                            }
+
+                            }
+                        }
+                    }
+                }
+            }
+        
+    }];
+    
+    lastSyncDate = [NSDate date];
+    NSMutableDictionary *dic = [self getValueFromPlist];
+    [dic setObject:lastSyncDate forKey:kLASTSYNCDATE];
+    [self setValueToPlist:dic];
+    NSLog(@"--%@", arrUsers);
+    //[ContactDetails InsertUserDuringSyncContacts:arrUsers];
+    return arrContacts;
+}
+
++(NSMutableArray *)getAllNewContactsFromContactList
+{
+    
+    ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, NULL);
+    
+    __block NSMutableArray *arrContacts = [[NSMutableArray alloc] init];
+    
+    __block BOOL accessGranted = NO;
+    
+    switch (ABAddressBookGetAuthorizationStatus())
+    {
+        case  kABAuthorizationStatusAuthorized:
+        {
+            arrContacts=[self FetchContactsArray:addressBook];
+        }
+            break;
+            
+        case  kABAuthorizationStatusNotDetermined :
+            
+            if (ABAddressBookRequestAccessWithCompletion != NULL) {
+                dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+                
+                ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef error) {
+                    accessGranted = granted;
+                    dispatch_semaphore_signal(sema);
+                });
+                
+                dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+            }
+            else {
+                accessGranted = YES;
+            }
+            
+            if (accessGranted) {
+                arrContacts=[self FetchContactsArray:addressBook];
+            }
+            break;
+            
+        case  kABAuthorizationStatusDenied:
+        case  kABAuthorizationStatusRestricted:
+        {
+            MY_ALERT(APP_NAME, @"Permission was not granted for contacts.\nPlease go to setting screen and in the privacy section select contact and enable W3post app.", nil);
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
+    return arrContacts;
+}
+
 
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D0AEFB21AE91C6200E6BDFA /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D0AEFB11AE91C6200E6BDFA /* AddressBook.framework */; };
 		9DE1C2281AE7B8780040D324 /* Reminders.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE1C2271AE7B8780040D324 /* Reminders.m */; };
 		9DE1C22B1AE7BE550040D324 /* FriendPickerScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE1C22A1AE7BE550040D324 /* FriendPickerScreen.m */; };
 		9DE1C22E1AE7C1640040D324 /* Friends.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE1C22D1AE7C1640040D324 /* Friends.m */; };
@@ -18,6 +19,9 @@
 		9DEB4ACF1AE6687B00DB91C6 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB4ACE1AE6687B00DB91C6 /* ContainerViewController.m */; };
 		9DEB4AD21AE6695E00DB91C6 /* MenuScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB4AD11AE6695E00DB91C6 /* MenuScreen.m */; };
 		9DEB4AD81AE67A1200DB91C6 /* CreateNewReminer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB4AD71AE67A1200DB91C6 /* CreateNewReminer.m */; };
+		9DEFF6B11AEB5C5100F979FF /* ParallaxHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DEFF6B01AEB5C5100F979FF /* ParallaxHeaderView.m */; };
+		9DEFF6B41AEB5D1600F979FF /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DEFF6B31AEB5D1600F979FF /* UIImage+ImageEffects.m */; };
+		9DEFF6B61AEB5E4600F979FF /* coverBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DEFF6B51AEB5E4600F979FF /* coverBG@2x.png */; };
 		C01735A41AE2F7AA00AA9AE2 /* APIConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = C017359F1AE2F7AA00AA9AE2 /* APIConnection.m */; };
 		C01735A51AE2F7AA00AA9AE2 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = C01735A11AE2F7AA00AA9AE2 /* Common.m */; };
 		C01735A61AE2F7AA00AA9AE2 /* SharedManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C01735A31AE2F7AA00AA9AE2 /* SharedManager.m */; };
@@ -76,6 +80,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9D0AEFB11AE91C6200E6BDFA /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		9DE1C2261AE7B8780040D324 /* Reminders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reminders.h; path = "../Model Interface/Reminders.h"; sourceTree = "<group>"; };
 		9DE1C2271AE7B8780040D324 /* Reminders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reminders.m; path = "../Model Interface/Reminders.m"; sourceTree = "<group>"; };
 		9DE1C2291AE7BE550040D324 /* FriendPickerScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendPickerScreen.h; sourceTree = "<group>"; };
@@ -94,6 +99,11 @@
 		9DEB4AD11AE6695E00DB91C6 /* MenuScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuScreen.m; sourceTree = "<group>"; };
 		9DEB4AD61AE67A1200DB91C6 /* CreateNewReminer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateNewReminer.h; sourceTree = "<group>"; };
 		9DEB4AD71AE67A1200DB91C6 /* CreateNewReminer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateNewReminer.m; sourceTree = "<group>"; };
+		9DEFF6AF1AEB5C5100F979FF /* ParallaxHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParallaxHeaderView.h; sourceTree = "<group>"; };
+		9DEFF6B01AEB5C5100F979FF /* ParallaxHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParallaxHeaderView.m; sourceTree = "<group>"; };
+		9DEFF6B21AEB5D1600F979FF /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		9DEFF6B31AEB5D1600F979FF /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		9DEFF6B51AEB5E4600F979FF /* coverBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coverBG@2x.png"; sourceTree = "<group>"; };
 		C017359E1AE2F7AA00AA9AE2 /* APIConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIConnection.h; sourceTree = "<group>"; };
 		C017359F1AE2F7AA00AA9AE2 /* APIConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIConnection.m; sourceTree = "<group>"; };
 		C01735A01AE2F7AA00AA9AE2 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
@@ -169,6 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D0AEFB21AE91C6200E6BDFA /* AddressBook.framework in Frameworks */,
 				C0DD70071AE3CE3E0096F217 /* MobileCoreServices.framework in Frameworks */,
 				C01735EA1AE31CCD00AA9AE2 /* CoreData.framework in Frameworks */,
 				C01735AB1AE2F81100AA9AE2 /* AssetsLibrary.framework in Frameworks */,
@@ -216,6 +227,8 @@
 		C01735961AE2F52600AA9AE2 /* Category Class */ = {
 			isa = PBXGroup;
 			children = (
+				9DEFF6B21AEB5D1600F979FF /* UIImage+ImageEffects.h */,
+				9DEFF6B31AEB5D1600F979FF /* UIImage+ImageEffects.m */,
 				C0DD70081AE3CE860096F217 /* UIImage+Extra.h */,
 				C0DD70091AE3CE860096F217 /* UIImage+Extra.m */,
 				C01735DB1AE302E200AA9AE2 /* NSData+Extra.h */,
@@ -291,6 +304,8 @@
 		C017359C1AE2F52600AA9AE2 /* Supporting View */ = {
 			isa = PBXGroup;
 			children = (
+				9DEFF6AF1AEB5C5100F979FF /* ParallaxHeaderView.h */,
+				9DEFF6B01AEB5C5100F979FF /* ParallaxHeaderView.m */,
 				C0DD70161AE3E55D0096F217 /* EventView.h */,
 				C0DD70171AE3E55D0096F217 /* EventView.m */,
 				C0DD70191AE3E56E0096F217 /* TaskVIew.h */,
@@ -354,6 +369,7 @@
 		C07573331AE2F3380017E0F9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9D0AEFB11AE91C6200E6BDFA /* AddressBook.framework */,
 				C0DD70061AE3CE3E0096F217 /* MobileCoreServices.framework */,
 				C01735E91AE31CCD00AA9AE2 /* CoreData.framework */,
 				C01735AA1AE2F81100AA9AE2 /* AssetsLibrary.framework */,
@@ -429,6 +445,7 @@
 		C0DD701F1AE3FDA70096F217 /* Demo Images */ = {
 			isa = PBXGroup;
 			children = (
+				9DEFF6B51AEB5E4600F979FF /* coverBG@2x.png */,
 				9DE1C22F1AE7C6CE0040D324 /* check@2x.png */,
 				9DE1C2301AE7C6CE0040D324 /* unCheck@2x.png */,
 				C0DD70201AE3FDA70096F217 /* demoPic.png */,
@@ -521,6 +538,7 @@
 				9DEA2FD01AE64C9A0000A251 /* createIcon@2x.png in Resources */,
 				C0DD700E1AE3D11D0096F217 /* rightIcon@2x.png in Resources */,
 				C0DD70121AE3DC2C0096F217 /* takePhoto@2x.png in Resources */,
+				9DEFF6B61AEB5E4600F979FF /* coverBG@2x.png in Resources */,
 				C07573481AE2F3380017E0F9 /* Main.storyboard in Resources */,
 				C01735D91AE2FEBD00AA9AE2 /* UnDotum.ttf in Resources */,
 				C01735E41AE30CDE00AA9AE2 /* btnRegBack@2x.png in Resources */,
@@ -565,12 +583,14 @@
 				C01735BA1AE2F96900AA9AE2 /* NSString+Extra.m in Sources */,
 				C0DD70151AE3E3330096F217 /* HomeScreen.m in Sources */,
 				C01735A41AE2F7AA00AA9AE2 /* APIConnection.m in Sources */,
+				9DEFF6B11AEB5C5100F979FF /* ParallaxHeaderView.m in Sources */,
 				9DE1C22B1AE7BE550040D324 /* FriendPickerScreen.m in Sources */,
 				9DEA2FD81AE64EE00000A251 /* LoginUserDetails.m in Sources */,
 				C01735C31AE2FBD800AA9AE2 /* ProfileImageDownloader.m in Sources */,
 				C01735BC1AE2F96900AA9AE2 /* UINavigationBar+Extra.m in Sources */,
 				9DEB4AD81AE67A1200DB91C6 /* CreateNewReminer.m in Sources */,
 				C01735E01AE3056600AA9AE2 /* RegistrationScreen.m in Sources */,
+				9DEFF6B41AEB5D1600F979FF /* UIImage+ImageEffects.m in Sources */,
 				C07573451AE2F3380017E0F9 /* AppDelegate.m in Sources */,
 				C07573411AE2F3380017E0F9 /* main.m in Sources */,
 				C01735A61AE2F7AA00AA9AE2 /* SharedManager.m in Sources */,

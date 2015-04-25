@@ -7,7 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ParallaxHeaderView.h"
 
 @interface MenuScreen : UITableViewController
-
+{
+    
+    __weak IBOutlet ParallaxHeaderView *parallexHeaderView;
+    __weak IBOutlet UILabel *lblSettings;
+    __weak IBOutlet UILabel *lblNotifications;
+    __weak IBOutlet UILabel *lblAddEven;
+    __weak IBOutlet UILabel *lblAddReminder;
+    __weak IBOutlet UILabel *lblHome;
+    __weak IBOutlet UILabel *lblName;
+    __weak IBOutlet UIButton *btnProfile;
+}
+- (IBAction)btnProfileTapped:(id)sender;
 @end
