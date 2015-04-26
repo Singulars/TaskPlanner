@@ -53,6 +53,7 @@
 		C03F76DC1AED2C130007297D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C03F76D91AED2C130007297D /* Bolts.framework */; };
 		C03F76DD1AED2C130007297D /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C03F76DA1AED2C130007297D /* FBSDKCoreKit.framework */; };
 		C03F76DE1AED2C130007297D /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C03F76DB1AED2C130007297D /* FBSDKLoginKit.framework */; };
+		C03F76E11AED30A20007297D /* EventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C03F76E01AED30A20007297D /* EventCell.m */; };
 		C07573351AE2F3380017E0F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C07573341AE2F3380017E0F9 /* Foundation.framework */; };
 		C07573371AE2F3380017E0F9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C07573361AE2F3380017E0F9 /* CoreGraphics.framework */; };
 		C07573391AE2F3380017E0F9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C07573381AE2F3380017E0F9 /* UIKit.framework */; };
@@ -70,7 +71,6 @@
 		C0D380491AECF753002B47DA /* OtherUserProfileDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D380481AECF753002B47DA /* OtherUserProfileDetails.m */; };
 		C0D380511AED0048002B47DA /* syncContacts@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0D380501AED0048002B47DA /* syncContacts@2x.png */; };
 		C0D380541AED114D002B47DA /* FriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D380531AED114D002B47DA /* FriendCell.m */; };
-		C0D380571AED1794002B47DA /* EventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D380561AED1794002B47DA /* EventCell.m */; };
 		C0D3805A1AED17B2002B47DA /* TaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D380591AED17B2002B47DA /* TaskCell.m */; };
 		C0D3805C1AED1B6A002B47DA /* createGroup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0D3805B1AED1B6A002B47DA /* createGroup@2x.png */; };
 		C0DD70051AE3C0DC0096F217 /* EnterProfileDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = C0DD70041AE3C0DC0096F217 /* EnterProfileDetail.m */; };
@@ -173,6 +173,8 @@
 		C03F76D91AED2C130007297D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		C03F76DA1AED2C130007297D /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		C03F76DB1AED2C130007297D /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		C03F76DF1AED30A20007297D /* EventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCell.h; sourceTree = "<group>"; };
+		C03F76E01AED30A20007297D /* EventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCell.m; sourceTree = "<group>"; };
 		C07573311AE2F3380017E0F9 /* TaskPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C07573341AE2F3380017E0F9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C07573361AE2F3380017E0F9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -197,8 +199,6 @@
 		C0D380501AED0048002B47DA /* syncContacts@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "syncContacts@2x.png"; sourceTree = "<group>"; };
 		C0D380521AED114D002B47DA /* FriendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCell.h; sourceTree = "<group>"; };
 		C0D380531AED114D002B47DA /* FriendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCell.m; sourceTree = "<group>"; };
-		C0D380551AED1794002B47DA /* EventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventCell.h; path = ../../../../../../../../../../../EventCell.h; sourceTree = "<group>"; };
-		C0D380561AED1794002B47DA /* EventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventCell.m; path = ../../../../../../../../../../../EventCell.m; sourceTree = "<group>"; };
 		C0D380581AED17B2002B47DA /* TaskCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskCell.h; sourceTree = "<group>"; };
 		C0D380591AED17B2002B47DA /* TaskCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskCell.m; sourceTree = "<group>"; };
 		C0D3805B1AED1B6A002B47DA /* createGroup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "createGroup@2x.png"; sourceTree = "<group>"; };
@@ -370,6 +370,8 @@
 		C017359C1AE2F52600AA9AE2 /* Supporting View */ = {
 			isa = PBXGroup;
 			children = (
+				C03F76DF1AED30A20007297D /* EventCell.h */,
+				C03F76E01AED30A20007297D /* EventCell.m */,
 				9DEFF6AF1AEB5C5100F979FF /* ParallaxHeaderView.h */,
 				9DEFF6B01AEB5C5100F979FF /* ParallaxHeaderView.m */,
 				C0DD70161AE3E55D0096F217 /* EventView.h */,
@@ -380,8 +382,6 @@
 				C02A82461AEC2B6C001306A4 /* GroupCell.m */,
 				C0D380521AED114D002B47DA /* FriendCell.h */,
 				C0D380531AED114D002B47DA /* FriendCell.m */,
-				C0D380551AED1794002B47DA /* EventCell.h */,
-				C0D380561AED1794002B47DA /* EventCell.m */,
 				C0D380581AED17B2002B47DA /* TaskCell.h */,
 				C0D380591AED17B2002B47DA /* TaskCell.m */,
 			);
@@ -669,6 +669,7 @@
 				C0DD70151AE3E3330096F217 /* HomeScreen.m in Sources */,
 				C01735A41AE2F7AA00AA9AE2 /* APIConnection.m in Sources */,
 				C02A82471AEC2B6C001306A4 /* GroupCell.m in Sources */,
+				C03F76E11AED30A20007297D /* EventCell.m in Sources */,
 				C03F76D11AED2B4E0007297D /* Settings.m in Sources */,
 				9DEFF6B11AEB5C5100F979FF /* ParallaxHeaderView.m in Sources */,
 				9DE1C22B1AE7BE550040D324 /* FriendPickerScreen.m in Sources */,
@@ -687,7 +688,6 @@
 				C07573411AE2F3380017E0F9 /* main.m in Sources */,
 				C03F76D01AED2B4E0007297D /* Birthdays.m in Sources */,
 				C01735A61AE2F7AA00AA9AE2 /* SharedManager.m in Sources */,
-				C0D380571AED1794002B47DA /* EventCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
