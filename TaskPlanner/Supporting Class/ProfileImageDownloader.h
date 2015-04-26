@@ -27,6 +27,5 @@
 @property(nonatomic, retain) NSMutableData *imageData;
 @property(nonatomic,strong)  NSString *strImageName;
 @property(nonatomic,strong) UIImage *ImgDownloaded;
-@property(nonatomic,strong) NSNumber *profileUserId;
 @property(nonatomic,assign) BOOL wantToSave;
 @end

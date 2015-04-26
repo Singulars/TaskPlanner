@@ -11,6 +11,8 @@
 #import "CreateNewReminer.h"
 #import "HomeScreen.h"
 #import "FriendPickerScreen.h"
+#import "GroupScreen.h"
+#import "ProfileScreen.h"
 
 #define ProfileRow 0
 #define HomeRow 1
@@ -70,24 +72,39 @@
     [lblBirthdays setFont:KSetFont(kDefaultFontName, 18)];
     [lblBirthdays setTextColor:COLOR_WITH_RGBA(51.0f, 51.0f, 51.0f, 1.0)];
     
-    lastIndex=1;
+    lastIndex=0;
     // Do any additional setup after loading the view.
 }
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    
+    NSString *strImg=[NSString stringWithFormat:@"%@",ShareObj.objLoginUser.userId];
+    NSString *strImgName=kProfilePicForThumb(strImg);
+    NSString *strImgPath=[Common getImage:strImgName fromDirectory:kProfileDictionaryName];
+    UIImage *img=[UIImage imageWithContentsOfFile:strImgPath];
+    [btnProfile setImage:(img!=nil)?[UIImage imageWithContentsOfFile:strImgPath]:[UIImage imageNamed:@"takePhoto"] forState:UIControlStateNormal];
+    [lblName setText:[NSString stringWithFormat:@"%@ %@",ShareObj.objLoginUser.firstName,ShareObj.objLoginUser.lastName]];
+}   
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark-
+#pragma mark- UITableview DataSource And DataSource
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NSLog(@"%li",indexPath.row);
-    if (lastIndex==indexPath.row) {
-        return;
-    }
-    
-    lastIndex=indexPath.row;
+//    NSLog(@"%li",indexPath.row);
+//    if (lastIndex==indexPath.row) {
+//        return;
+//    }
+//    
+//    lastIndex=indexPath.row;
     
     switch (indexPath.row) {
         case HomeRow:
@@ -128,6 +145,14 @@
            
         }
             break;
+        case GroupsRow:
+        {
+            ContainerViewController *objContainer = (ContainerViewController *)self.navigationController.parentViewController;
+            GroupScreen *objScr=[self.storyboard instantiateViewControllerWithIdentifier:@"GroupScreen"];
+            [objContainer loadSelectedViewController:objScr];
+            
+        }
+            break;
         case BirthdayRow:
         {
             
@@ -135,7 +160,9 @@
             break;
         case ProfileRow:
         {
-            
+            ContainerViewController *objContainer = (ContainerViewController *)self.navigationController.parentViewController;
+            ProfileScreen *objScr=[self.storyboard instantiateViewControllerWithIdentifier:@"ProfileScreen"];
+            [objContainer loadSelectedViewController:objScr];
         }
             break;
             
@@ -159,6 +186,10 @@
 #pragma mark UIButton Action Method
 
 - (IBAction)btnProfileTapped:(id)sender {
+    
+    ContainerViewController *objContainer = (ContainerViewController *)self.navigationController.parentViewController;
+    ProfileScreen *objScr=[self.storyboard instantiateViewControllerWithIdentifier:@"ProfileScreen"];
+    [objContainer loadSelectedViewController:objScr];
   
 }
 @end

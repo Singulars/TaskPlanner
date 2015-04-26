@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface GroupCell : UICollectionViewCell
+{
+    
+}
 
+-(void)CreateGroupWithData:(NSMutableDictionary *)data;
+@property(nonatomic,assign) BOOL iscellNil;
 @end

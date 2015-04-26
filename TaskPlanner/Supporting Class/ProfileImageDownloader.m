@@ -14,7 +14,6 @@
 @synthesize strImageName;
 @synthesize ImgDownloaded;
 @synthesize delegate;
-@synthesize profileUserId;
 @synthesize wantToSave;
 
 
@@ -54,11 +53,11 @@
     if([self.imageData length] > 0)
     {
          ImgDownloaded=[UIImage imageWithData:self.imageData];
+         [self setImage:ImgDownloaded forState:UIControlStateNormal];
         
-        
-        if (ImgDownloaded!=nil) {
+        if (ImgDownloaded!=nil && !wantToSave) {
             [Common saveImage:self.imageData :strImageName Indirectory:kProfileDictionaryName];
-           [self setImage:ImgDownloaded forState:UIControlStateNormal];
+           
         }
         
         if ([delegate respondsToSelector:@selector(ProfileImageDownloaded:)]) {

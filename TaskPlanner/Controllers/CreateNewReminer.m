@@ -17,6 +17,8 @@
 
 @implementation CreateNewReminer
 
+@synthesize isFromHomeScreen;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -28,11 +30,11 @@
     NavTitle.font =ScreenTitleFontWithOutBold;
     NavTitle.textAlignment = NSTextAlignmentCenter;
     NavTitle.textColor = [UIColor whiteColor];
-    [NavTitle setText:@"New Reminder"];
+    [NavTitle setText:(isFromHomeScreen)?@"Edit Reminder":@"New Reminder"];
     [NavTitle sizeToFit];
     [self.navigationItem setTitleView:NavTitle];
     
-    UIBarButtonItem *leftBarItem=[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menuIcon"] style:UIBarButtonItemStylePlain target:self action:@selector(btnBackTapped:)];
+    UIBarButtonItem *leftBarItem=[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:(isFromHomeScreen)?@"leftIcon":@"menuIcon"] style:UIBarButtonItemStylePlain target:self action:@selector(btnBackTapped:)];
     [leftBarItem setTintColor:kWhiteColor];
     [self.navigationItem setLeftBarButtonItem:leftBarItem];
     
@@ -113,6 +115,10 @@
 
 -(IBAction)btnBackTapped:(id)sender
 {
+    if (isFromHomeScreen) {
+        [self.navigationController popViewControllerAnimated:YES];
+        return;
+    }
     ContainerViewController *objContainer = (ContainerViewController *)self.parentViewController.parentViewController;
     [objContainer moveNavigationMenu];
 }

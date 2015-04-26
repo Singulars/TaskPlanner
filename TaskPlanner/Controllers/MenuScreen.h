@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ParallaxHeaderView.h"
+#import "ProfileImageDownloader.h"
 
 @interface MenuScreen : UITableViewController
 {
@@ -22,7 +23,7 @@
     __weak IBOutlet UILabel *lblAddReminder;
     __weak IBOutlet UILabel *lblHome;
     __weak IBOutlet UILabel *lblName;
-    __weak IBOutlet UIButton *btnProfile;
+    __weak IBOutlet ProfileImageDownloader *btnProfile;
     NSInteger lastIndex;
 }
 - (IBAction)btnProfileTapped:(id)sender;

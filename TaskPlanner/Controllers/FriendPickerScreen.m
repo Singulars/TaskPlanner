@@ -8,6 +8,8 @@
 
 #import "FriendPickerScreen.h"
 #import "Friends.h"
+#import "OtherUserProfileDetails.h"
+#import "FriendCell.h"
 
 #define BtnCheckTag 11
 
@@ -24,16 +26,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    arrFriends=[NSMutableArray arrayWithObjects:@"Will Smith",@"Jhonson", @"Smith C",@"Mathew C",@"Roy JO",@"Mark Henry",@"Ray Misterio",nil];
+    arrFriends=[[NSMutableArray alloc] initWithArray:[Friends fetchAllFriendsDetails]];
     [self.navigationController.navigationBar setHidden:NO];
     [Common setBackGroundImageToNavigationBar:self.navigationController.navigationBar withImageColor:APPORANGECOLOR];
     
     UILabel *NavTitle = [[UILabel alloc] initWithFrame:CGRectZero];
     NavTitle.backgroundColor = [UIColor clearColor];
-    NavTitle.font =ScreenTitleFont;
+    NavTitle.font =ScreenTitleFontWithOutBold;
     NavTitle.textAlignment = NSTextAlignmentCenter;
     NavTitle.textColor = [UIColor whiteColor];
-    [NavTitle setText:@"Select Friends"];
+    [NavTitle setText:(isFromCreateScreen)?@"Select Friends":@"Friends"];
     [NavTitle sizeToFit];
     [self.navigationItem setTitleView:NavTitle];
     
@@ -48,6 +50,10 @@
     else
     {
         leftBarItem=[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menuIcon"] style:UIBarButtonItemStylePlain target:self action:@selector(btnBackTapped:)];
+        
+        UIBarButtonItem *rightBarItem=[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"syncContacts"] style:UIBarButtonItemStylePlain target:self action:@selector(btnSyncContactsTapped:)];
+        [rightBarItem setTintColor:kWhiteColor];
+        [self.navigationItem setRightBarButtonItem:rightBarItem];
     }
     [leftBarItem setTintColor:kWhiteColor];
     [self.navigationItem setLeftBarButtonItem:leftBarItem];
@@ -78,10 +84,15 @@
    
 }
 
+-(IBAction)btnSyncContactsTapped:(id)sender
+{
+    
+}
 -(IBAction)btnDoneTapped:(id)sender
 {
     
 }
+
 
 
 #pragma mark -
@@ -99,43 +110,31 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *strCellID=[NSString stringWithFormat:@"Cell_%li",(long)indexPath.row];
-    
-    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:strCellID];
+    Friends *objFData=[arrFriends objectAtIndex:indexPath.row];
+    FriendCell *cell=[tableView dequeueReusableCellWithIdentifier:strCellID];
     if (cell==nil)
     {
         
-        cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:strCellID];
+        cell=[[FriendCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:strCellID withFriendData:objFData];
         
-        UIImageView *imgPicture=[[UIImageView alloc] initWithFrame:CGRectMake(15, 10, 40, 40)];
-        [imgPicture setBackgroundColor:CLEARCOLOUR];
-        [imgPicture setImage:GET_IMAGE_WITH_NAME(@"demoPic")];
-        [[imgPicture layer] setCornerRadius:imgPicture.frame.size.width/2];
-        [imgPicture setClipsToBounds:YES];
-        [cell addSubview:imgPicture];
-        
-        UILabel *lblName=[[UILabel alloc] initWithFrame:CGRectMake(65, 10, SCREENWIDTH-80, 30)];
-        [lblName setBackgroundColor:CLEARCOLOUR];
-        [lblName setText:[arrFriends objectAtIndex:indexPath.row]];
-        [lblName setFont:KSetFont(kDefaultFontName, 15.0f)];
-        [cell addSubview:lblName];
-        
-        UIButton *btnCheckUnCheck=[[UIButton alloc] initWithFrame:CGRectMake(SCREENWIDTH-50,13,30, 30)];
-        [btnCheckUnCheck setBackgroundColor:[UIColor clearColor]];
-        [btnCheckUnCheck setImage:[UIImage imageNamed:@"unCheck"] forState:UIControlStateNormal];
-        [btnCheckUnCheck setImage:[UIImage imageNamed:@"check"] forState:UIControlStateSelected];
-//        NSDictionary *diccUser=[NSDictionary dictionaryWithObjectsAndKeys:objF.userId,kuserId, nil];
-//        
-//        if ([arrSelectedIndexPath containsObject:diccUser]) {
-//            [btnCheckUnCheck setImage:[UIImage imageNamed:@"check"] forState:UIControlStateNormal];
-//        }
-//        else{
-//            [btnCheckUnCheck setImage:[UIImage imageNamed:@"unCheck"] forState:UIControlStateNormal];
-//        }
-        
-        [btnCheckUnCheck setContentMode:UIViewContentModeScaleAspectFit];
-        [btnCheckUnCheck setUserInteractionEnabled:NO];
-        btnCheckUnCheck.tag=BtnCheckTag;
-        [cell.contentView addSubview:btnCheckUnCheck];
+        if (isFromCreateScreen) {
+            UIButton *btnCheckUnCheck=[[UIButton alloc] initWithFrame:CGRectMake(SCREENWIDTH-50,13,30, 30)];
+            [btnCheckUnCheck setBackgroundColor:[UIColor clearColor]];
+            [btnCheckUnCheck setImage:[UIImage imageNamed:@"unCheck"] forState:UIControlStateNormal];
+            [btnCheckUnCheck setImage:[UIImage imageNamed:@"check"] forState:UIControlStateSelected];
+            NSDictionary *diccUser=[NSDictionary dictionaryWithObjectsAndKeys:objFData.friendId,kuserId, nil];
+            
+            if ([arrSelectedIndexPath containsObject:diccUser]) {
+                [btnCheckUnCheck setImage:[UIImage imageNamed:@"check"] forState:UIControlStateNormal];
+            }
+            else{
+                [btnCheckUnCheck setImage:[UIImage imageNamed:@"unCheck"] forState:UIControlStateNormal];
+            }
+            [btnCheckUnCheck setContentMode:UIViewContentModeScaleAspectFit];
+            [btnCheckUnCheck setUserInteractionEnabled:NO];
+            btnCheckUnCheck.tag=BtnCheckTag;
+            [cell.contentView addSubview:btnCheckUnCheck];
+        }
         
     }
     
@@ -145,26 +144,34 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-        
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
-        
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    
+    if (isFromCreateScreen) {
         UITableViewCell *cell=(UITableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
         
         UIButton *btnCheckUnCheck=(UIButton *)[cell.contentView viewWithTag:BtnCheckTag];
-        [btnCheckUnCheck setSelected:!btnCheckUnCheck.isSelected];
-    
-//        Friends *objF=[arrFriends objectAtIndex:indexPath.row];
-//        NSDictionary *diccUser=[NSDictionary dictionaryWithObjectsAndKeys:objF.friendId,kuserId, nil];
-//        
-//        if ([arrSelectedIndexPath containsObject:diccUser]) {
-//            [btnCheckUnCheck setImage:[UIImage imageNamed:@"unCheck"] forState:UIControlStateNormal];
-//            [arrSelectedIndexPath removeObject:diccUser];
-//        }
-//        else{
-//            [btnCheckUnCheck setImage:[UIImage imageNamed:@"check"] forState:UIControlStateNormal];
-//            [arrSelectedIndexPath addObject:diccUser];
-//        }
-    
+        
+        Friends *objF=[arrFriends objectAtIndex:indexPath.row];
+        NSDictionary *diccUser=[NSDictionary dictionaryWithObjectsAndKeys:objF.friendId,kuserId, nil];
+        
+        if ([arrSelectedIndexPath containsObject:diccUser]) {
+            [btnCheckUnCheck setImage:[UIImage imageNamed:@"unCheck"] forState:UIControlStateNormal];
+            [arrSelectedIndexPath removeObject:diccUser];
+        }
+        else{
+            [btnCheckUnCheck setImage:[UIImage imageNamed:@"check"] forState:UIControlStateNormal];
+            [arrSelectedIndexPath addObject:diccUser];
+        }
+    }
+    else
+    {
+        Friends *objFData=[arrFriends objectAtIndex:indexPath.row];
+        OtherUserProfileDetails *objScr=[self.storyboard instantiateViewControllerWithIdentifier:@"OtherUserProfileDetails"];
+        [objScr setObjFriendData:objFData];
+        [self.navigationController pushViewController:objScr animated:YES];
+    }
+   
 }
 
 

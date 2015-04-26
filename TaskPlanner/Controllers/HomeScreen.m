@@ -35,10 +35,9 @@
     [leftBarItem setTintColor:kWhiteColor];
     [self.navigationItem setLeftBarButtonItem:leftBarItem];
     
-//    UIBarButtonItem *rightBarItem=[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"createIcon"] style:UIBarButtonItemStylePlain target:self action:@selector(btnCreateNewEventTapped:)];
-//    [rightBarItem setTintColor:kWhiteColor];
-//    [self.navigationItem setRightBarButtonItem:rightBarItem];
-    
+
+    UIToolbar *toolBar=[[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, btnBackView.frame.size.width, btnBackView.frame.size.height)];
+    [btnBackView insertSubview:toolBar atIndex:0];
 
     
     taskView=[[TaskVIew alloc] initWithFrame:CGRectMake(0, 0, scrContainerView.frame.size.width, scrContainerView.frame.size.height)];

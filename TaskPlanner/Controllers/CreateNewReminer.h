@@ -30,5 +30,5 @@
 - (IBAction)dateValueChanged:(id)sender;
 - (IBAction)switchValueChanged:(id)sender;
 - (IBAction)remindDateValueChanged:(id)sender;
-
+@property(nonatomic,assign) BOOL isFromHomeScreen;
 @end

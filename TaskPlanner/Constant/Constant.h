@@ -137,7 +137,7 @@ __responder = [__responder nextResponder]; \
 
 #define kDefaultDateFormat @"dd/MM/yyyy HH:mm:ss"
 #define kReminderDateormat @"MMM dd, yyyy HH:mm a"
-#define kDefaultShortDateFormat @"dd/MM/yyyy"
+#define kDefaultShortDateFormat @"yyyy-MM-dd"
 
 #define MY_ALERT(Title,Msg,Delegate) [[[UIAlertView alloc] initWithTitle:Title \
 message:Msg \
@@ -156,7 +156,7 @@ otherButtonTitles:@"OK", nil] show];
 #define LIB_PATH                    [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0]
 #define DOC_DIR_PATH                [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
 
-#define kProfileImageUrl(strName) [NSString stringWithFormat:@"http://www.singulars.co.in/lawyer/uploads/profilepic/%@",strName]
+#define kProfileImageUrl(strName) [NSString stringWithFormat:@"http://singulars.co.in/lawyer/profilePicPlanner/%@",strName]
 #define kProfileDictionaryName      @"ProfilePics"
 #define kProfilePicForThumb(userId_Mobilenumber) [NSString stringWithFormat:@"%@.png",userId_Mobilenumber]
 #define kProfilePicForFull(userId_Mobilenumber)  [NSString stringWithFormat:@"%@.png",userId_Mobilenumber]
@@ -238,6 +238,7 @@ otherButtonTitles:@"OK", nil] show];
 #define kreminderDate              @"reminderDate"
 #define kreminderId                 @"reminderId"
 #define kremindOnDate               @"remindOnDate"
+#define kupdateProfile              @"updateProfile"
 
 
 #endif

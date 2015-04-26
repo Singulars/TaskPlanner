@@ -52,9 +52,8 @@
 
 +(void)LoadProfileImageAndSaveToLocal
 {
-    NSString *strImg=(IS_IPAD)?[NSString stringWithFormat:@"%@",@"enteruserid"]:[NSString stringWithFormat:@"%@_small",@"enteruserid"];
-    NSString *strImgName=kProfilePicForThumb(strImg);
-    NSURL *imageUrl= [NSURL URLWithString:[NSString stringWithFormat:@"http://development.ifuturz.com/core/twotwit/uploads/profilepic/%@",strImgName]];
+    NSString *strImgName=kProfilePicForThumb(ShareObj.objLoginUser.userId);
+    NSURL *imageUrl= [NSURL URLWithString:kProfileImageUrl(strImgName)];
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
         
         NSData *data = [NSData dataWithContentsOfURL:imageUrl];
@@ -131,6 +130,17 @@
     NSRange pmRange = [time rangeOfString:@"PM"];
     BOOL is24h = (amRange.location == NSNotFound && pmRange.location == NSNotFound);
     return is24h;
+}
+
++(NSString *)getBirthdayFormat:(NSString *)strBirthdate
+{
+    NSDateFormatter *df=[[NSDateFormatter alloc] init];
+    [df setDateFormat:kDefaultShortDateFormat];
+    NSDate *BDate = [df dateFromString:strBirthdate];
+    df=[[NSDateFormatter alloc] init];
+    [df setDateFormat:kReminderDateormat];
+    NSString *strDate = [df stringFromDate:BDate];
+    return strDate;
 }
 
 +(NSString *)getTimeInAMorPM:(NSString *)time

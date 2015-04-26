@@ -15,7 +15,8 @@ typedef enum : NSInteger {
     ENUMAPIActionReg,
     ENUMAPIActionGetCountry,
     ENUMAPIActionSignUp,
-    ENUMAPIActionCreateReminder
+    ENUMAPIActionCreateReminder,
+    ENUMAPIActionUpdateProfile
     
 } ENUMAPIAction;
 

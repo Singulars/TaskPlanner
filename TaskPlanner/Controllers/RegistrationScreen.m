@@ -8,7 +8,7 @@
 
 #import "RegistrationScreen.h"
 #import "EnterProfileDetail.h"
-
+#import "HomeScreen.h"
 
 #define kMobileNumberLimit 10
 
@@ -218,11 +218,10 @@
                          else {
                              LoginUserDetails *objLogin=[LoginUserDetails SaveLoginUserDeatilsWithData:[result objectForKey:kuserDetails]];
                              [ShareObj setObjLoginUser:objLogin];
-                             
-                             EnterProfileDetail *objProScr=[self.storyboard instantiateViewControllerWithIdentifier:@"EnterProfileDetail"];
-                             [objProScr setStrMobileNo:txtNumber.text];
-                             [objProScr setStrCC:lblCountryCode.text];
-                             [self.navigationController pushViewController:objProScr animated:YES];
+                             [Common LoadProfileImageAndSaveToLocal];
+                             HomeScreen *objHomeScreen=[self.storyboard instantiateViewControllerWithIdentifier:@"HomeScreen"];
+                             [self.navigationController.navigationBar setHidden:YES];
+                             [self.navigationController pushViewController:objHomeScreen animated:YES];
                          }
                      }
                  }

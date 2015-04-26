@@ -78,6 +78,8 @@
         return ksignUp;//kcreateReminder
     if(type == ENUMAPIActionCreateReminder)
         return kcreateReminder;
+    if(type == ENUMAPIActionUpdateProfile)
+        return kupdateProfile;
     
     return @"";
 }

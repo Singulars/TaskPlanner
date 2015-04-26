@@ -25,6 +25,7 @@
 +(void)DeleteImagesFromDirectory:(NSString *)directory;
 +(BOOL)RenameFileWithName:(NSString *)strNewName OldImageName:(NSString *)strOldName Indirectory:(NSString *)directoryName;
 +(void)LoadProfileImageAndSaveToLocal;
++(NSString *)getBirthdayFormat:(NSString *)strBirthdate;
 +(float)GetRowHeightAccordingToImageSize:(CGSize)imageSize;
 +(NSString*)getUniqName;
 +(NSString *)getFullDate;
