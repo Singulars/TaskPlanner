@@ -45,6 +45,14 @@
 		C02A82441AEC29E4001306A4 /* GroupScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = C02A82431AEC29E4001306A4 /* GroupScreen.m */; };
 		C02A82471AEC2B6C001306A4 /* GroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C02A82461AEC2B6C001306A4 /* GroupCell.m */; };
 		C02A824A1AEC3D45001306A4 /* GroupDetailScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = C02A82491AEC3D45001306A4 /* GroupDetailScreen.m */; };
+		C03F76D01AED2B4E0007297D /* Birthdays.m in Sources */ = {isa = PBXBuildFile; fileRef = C03F76CD1AED2B4E0007297D /* Birthdays.m */; };
+		C03F76D11AED2B4E0007297D /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = C03F76CF1AED2B4E0007297D /* Settings.m */; };
+		C03F76D41AED2BBE0007297D /* Notifications.m in Sources */ = {isa = PBXBuildFile; fileRef = C03F76D31AED2BBE0007297D /* Notifications.m */; };
+		C03F76D61AED2BCF0007297D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C03F76D51AED2BCF0007297D /* Social.framework */; };
+		C03F76D81AED2BD60007297D /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C03F76D71AED2BD60007297D /* Accounts.framework */; };
+		C03F76DC1AED2C130007297D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C03F76D91AED2C130007297D /* Bolts.framework */; };
+		C03F76DD1AED2C130007297D /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C03F76DA1AED2C130007297D /* FBSDKCoreKit.framework */; };
+		C03F76DE1AED2C130007297D /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C03F76DB1AED2C130007297D /* FBSDKLoginKit.framework */; };
 		C07573351AE2F3380017E0F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C07573341AE2F3380017E0F9 /* Foundation.framework */; };
 		C07573371AE2F3380017E0F9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C07573361AE2F3380017E0F9 /* CoreGraphics.framework */; };
 		C07573391AE2F3380017E0F9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C07573381AE2F3380017E0F9 /* UIKit.framework */; };
@@ -154,6 +162,17 @@
 		C02A82461AEC2B6C001306A4 /* GroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupCell.m; sourceTree = "<group>"; };
 		C02A82481AEC3D45001306A4 /* GroupDetailScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupDetailScreen.h; sourceTree = "<group>"; };
 		C02A82491AEC3D45001306A4 /* GroupDetailScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupDetailScreen.m; sourceTree = "<group>"; };
+		C03F76CC1AED2B4E0007297D /* Birthdays.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Birthdays.h; sourceTree = "<group>"; };
+		C03F76CD1AED2B4E0007297D /* Birthdays.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Birthdays.m; sourceTree = "<group>"; };
+		C03F76CE1AED2B4E0007297D /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		C03F76CF1AED2B4E0007297D /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
+		C03F76D21AED2BBE0007297D /* Notifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notifications.h; sourceTree = "<group>"; };
+		C03F76D31AED2BBE0007297D /* Notifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notifications.m; sourceTree = "<group>"; };
+		C03F76D51AED2BCF0007297D /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		C03F76D71AED2BD60007297D /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		C03F76D91AED2C130007297D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		C03F76DA1AED2C130007297D /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		C03F76DB1AED2C130007297D /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		C07573311AE2F3380017E0F9 /* TaskPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C07573341AE2F3380017E0F9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C07573361AE2F3380017E0F9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -207,12 +226,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C03F76D81AED2BD60007297D /* Accounts.framework in Frameworks */,
+				C03F76DD1AED2C130007297D /* FBSDKCoreKit.framework in Frameworks */,
+				C03F76D61AED2BCF0007297D /* Social.framework in Frameworks */,
 				9D0AEFB21AE91C6200E6BDFA /* AddressBook.framework in Frameworks */,
 				C0DD70071AE3CE3E0096F217 /* MobileCoreServices.framework in Frameworks */,
 				C01735EA1AE31CCD00AA9AE2 /* CoreData.framework in Frameworks */,
 				C01735AB1AE2F81100AA9AE2 /* AssetsLibrary.framework in Frameworks */,
+				C03F76DE1AED2C130007297D /* FBSDKLoginKit.framework in Frameworks */,
 				C01735A91AE2F80900AA9AE2 /* AVFoundation.framework in Frameworks */,
 				C07573371AE2F3380017E0F9 /* CoreGraphics.framework in Frameworks */,
+				C03F76DC1AED2C130007297D /* Bolts.framework in Frameworks */,
 				C07573391AE2F3380017E0F9 /* UIKit.framework in Frameworks */,
 				C07573351AE2F3380017E0F9 /* Foundation.framework in Frameworks */,
 			);
@@ -299,6 +323,12 @@
 		C01735991AE2F52600AA9AE2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C03F76D21AED2BBE0007297D /* Notifications.h */,
+				C03F76D31AED2BBE0007297D /* Notifications.m */,
+				C03F76CC1AED2B4E0007297D /* Birthdays.h */,
+				C03F76CD1AED2B4E0007297D /* Birthdays.m */,
+				C03F76CE1AED2B4E0007297D /* Settings.h */,
+				C03F76CF1AED2B4E0007297D /* Settings.m */,
 				C01735E61AE31AAA00AA9AE2 /* AppNavScreen.h */,
 				C01735E71AE31AAA00AA9AE2 /* AppNavScreen.m */,
 				C01735DE1AE3056600AA9AE2 /* RegistrationScreen.h */,
@@ -394,6 +424,9 @@
 		C07573281AE2F3380017E0F9 = {
 			isa = PBXGroup;
 			children = (
+				C03F76D91AED2C130007297D /* Bolts.framework */,
+				C03F76DA1AED2C130007297D /* FBSDKCoreKit.framework */,
+				C03F76DB1AED2C130007297D /* FBSDKLoginKit.framework */,
 				C075733A1AE2F3380017E0F9 /* TaskPlanner */,
 				C07573591AE2F3380017E0F9 /* TaskPlannerTests */,
 				C07573331AE2F3380017E0F9 /* Frameworks */,
@@ -413,6 +446,8 @@
 		C07573331AE2F3380017E0F9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C03F76D71AED2BD60007297D /* Accounts.framework */,
+				C03F76D51AED2BCF0007297D /* Social.framework */,
 				9D0AEFB11AE91C6200E6BDFA /* AddressBook.framework */,
 				C0DD70061AE3CE3E0096F217 /* MobileCoreServices.framework */,
 				C01735E91AE31CCD00AA9AE2 /* CoreData.framework */,
@@ -634,6 +669,7 @@
 				C0DD70151AE3E3330096F217 /* HomeScreen.m in Sources */,
 				C01735A41AE2F7AA00AA9AE2 /* APIConnection.m in Sources */,
 				C02A82471AEC2B6C001306A4 /* GroupCell.m in Sources */,
+				C03F76D11AED2B4E0007297D /* Settings.m in Sources */,
 				9DEFF6B11AEB5C5100F979FF /* ParallaxHeaderView.m in Sources */,
 				9DE1C22B1AE7BE550040D324 /* FriendPickerScreen.m in Sources */,
 				C02A82441AEC29E4001306A4 /* GroupScreen.m in Sources */,
@@ -645,9 +681,11 @@
 				C01735BC1AE2F96900AA9AE2 /* UINavigationBar+Extra.m in Sources */,
 				9DEB4AD81AE67A1200DB91C6 /* CreateNewReminer.m in Sources */,
 				C01735E01AE3056600AA9AE2 /* RegistrationScreen.m in Sources */,
+				C03F76D41AED2BBE0007297D /* Notifications.m in Sources */,
 				9DEFF6B41AEB5D1600F979FF /* UIImage+ImageEffects.m in Sources */,
 				C07573451AE2F3380017E0F9 /* AppDelegate.m in Sources */,
 				C07573411AE2F3380017E0F9 /* main.m in Sources */,
+				C03F76D01AED2B4E0007297D /* Birthdays.m in Sources */,
 				C01735A61AE2F7AA00AA9AE2 /* SharedManager.m in Sources */,
 				C0D380571AED1794002B47DA /* EventCell.m in Sources */,
 			);
@@ -774,9 +812,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TaskPlanner/TaskPlanner-Prefix.pch";
 				INFOPLIST_FILE = "TaskPlanner/TaskPlanner-Info.plist";
+				OTHER_LDFLAGS = "-Objc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -787,9 +831,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TaskPlanner/TaskPlanner-Prefix.pch";
 				INFOPLIST_FILE = "TaskPlanner/TaskPlanner-Info.plist";
+				OTHER_LDFLAGS = "-Objc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

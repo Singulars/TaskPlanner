@@ -13,6 +13,10 @@
 #import "FriendPickerScreen.h"
 #import "GroupScreen.h"
 #import "ProfileScreen.h"
+#import "Notifications.h"
+#import "Settings.h"
+#import "Birthdays.h"
+
 
 #define ProfileRow 0
 #define HomeRow 1
@@ -129,14 +133,20 @@
             break;
         case NotificationsRow:
         {
+            ContainerViewController *objContainer = (ContainerViewController *)self.navigationController.parentViewController;
+            Notifications *objViewcontroller = (Notifications *)[self.storyboard instantiateViewControllerWithIdentifier:@"Notifications"];
+            [objContainer loadSelectedViewController:objViewcontroller];
             
         }
             break;
         case SettingsRow:
         {
-            
+            ContainerViewController *objContainer = (ContainerViewController *)self.navigationController.parentViewController;
+            Settings *objViewcontroller = (Settings *)[self.storyboard instantiateViewControllerWithIdentifier:@"Settings"];
+            [objContainer loadSelectedViewController:objViewcontroller];
         }
             break;
+       
         case FriendRow:
         {
             ContainerViewController *objContainer = (ContainerViewController *)self.navigationController.parentViewController;
@@ -155,7 +165,9 @@
             break;
         case BirthdayRow:
         {
-            
+            ContainerViewController *objContainer = (ContainerViewController *)self.navigationController.parentViewController;
+            Birthdays *objViewcontroller = (Birthdays *)[self.storyboard instantiateViewControllerWithIdentifier:@"Birthdays"];
+            [objContainer loadSelectedViewController:objViewcontroller];
         }
             break;
         case ProfileRow:
